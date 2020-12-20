@@ -18,7 +18,7 @@ public class Server {
         int rows = 0;
 
         // db parameters
-        String url = "jdbc:sqlite:/home/turingarena/Desktop/mvc2-1/db.db";
+        String url = "jdbc:sqlite:db.db";
         // create a connection to the database
         try {
             conn = DriverManager.getConnection(url);
@@ -46,14 +46,16 @@ public class Server {
         if (rows > 0) return true;
         else return false;
     }
-
-    public void insert(String username, String password, String ruolo) {
+   /*
+      La funzione insertUser aggiunge un utente al sistema. Verrà utilizzata all'interno dell'area Admin.
+    */
+    public void insertUser(String username, String password, String ruolo) {
         Connection conn = null;
         String sql = "SELECT * FROM Users WHERE username =? AND password = ? AND ROLE =?";
         int rows = 0;
 
         // db parameters
-        String url = "jdbc:sqlite:/home/turingarena/Desktop/mvc2-1/db.db";
+        String url = "jdbc:sqlite:db.db";
         // create a connection to the database
         try {
             conn = DriverManager.getConnection(url);

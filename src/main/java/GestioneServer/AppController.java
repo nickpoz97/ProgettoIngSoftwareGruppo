@@ -145,7 +145,7 @@ public class AppController {
                        @RequestParam(name = "password", required = true) String Password,
                        @RequestParam(name = "Ruolo", required = true) String Role) {
         Server s = new Server();
-         s.insert(Username,Password,Role);
+         s.insertUser(Username,Password,Role);
          return "admin";
     }
 
